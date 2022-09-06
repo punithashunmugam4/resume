@@ -6,7 +6,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .main-content{
-    grid-template-columns: repeat(1,1fr);
+     min-height: 1000px;
+    display: grid;
+    width: 90%;
+    margin: 20px auto;
+    grid-template-columns: 300px 700px;
 }
 .right-section{
     grid-column: span 1/span 2;
@@ -67,7 +71,7 @@
 }
 .progress-bar{
     border: 1px solid white;
-    border-width:4px;
+    height:4px;
 }
 .right-main-content{
     padding: 2rem 3rem 2rem 3rem;
@@ -84,12 +88,43 @@
     border: 1px solid black;
     border-collapse: collapse;
 }
-@media screen and (min-width:674px) {
+@media screen and (max-width:673px) {
     .main-content{
-    min-height: 1000px;
-    display: grid;
-    width: 90%;
-    margin: 20px auto;
-    grid-template-columns: 300px 700px;
-    }
+       
+        display:grid;
+       
+        grid-template-columns: repeat(1, 1fr);
+       
+        min-height: 1000px;
+       
+        grid-template-areas: 'left'
+       
+        'right';
+       
+        width: 90%; 
+       
+       } 
+       
+       .left-section{
+       
+        grid-area: left;
+       
+        display:block;
+       
+        background-color: rgb(2, 74, 102); 
+       
+       }
+       
+        
+       
+       .right-section{
+       
+        grid-area: right;
+       
+        display:block;
+       
+        background-color: rgb(149, 189, 241);
+       
+        
+       }
 }
